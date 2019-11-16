@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/anton-trofimov-12-11-2019/precache-manifest.9506e878e26b817f01e50d3ea2f05acd.js"
+  "/anton-trofimov-12-11-2019/precache-manifest.f51c889623eba35b2b081cc9c09c031f.js"
 );
 
 self.addEventListener('message', (event) => {
