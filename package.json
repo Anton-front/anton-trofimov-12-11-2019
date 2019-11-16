@@ -2,7 +2,7 @@
   "name": "app-weather",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://Anton-front.github.io/",
+  "homepage": "https://anton-front.github.io/anton-trofimov-12-11-2019",
   "dependencies": {
     "@material-ui/core": "^4.6.1",
     "@material-ui/icons": "^4.5.1",

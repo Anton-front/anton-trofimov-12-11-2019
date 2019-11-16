@@ -36,21 +36,19 @@ const Favorites  = inject('weatherInfo')(observer(({weatherInfo}) => {
                 <Typography
                   variant="h5"
                 >
-                  { item.LocalizedName } 
+                  { item.LocalizedName }
                 </Typography>
                 <Typography
                   component="p"
                 >
-                  { item.Temperature.Metric.Value }
-                  &nbsp;
-                  { item.Temperature.Metric.Unit }
+                  { weatherInfo.convertCelsToFahr(item.Temperature.Metric.Value) }
                 </Typography>
               </CardContent>
               <CardActions className="btn-details-wrap">
                 <NavLink
                   className="btn-details-link"
                   to="/"
-                  onClick={ submitSearch(item.LocalizedName) }
+                  onClick={ () => submitSearch(item.LocalizedName) }
                 >
                   See details
                 </NavLink>

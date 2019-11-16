@@ -10,6 +10,8 @@ import SearchIcon from '@material-ui/icons/Search';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Switch from '@material-ui/core/Switch';
 import icoImg from '../weather-ico.png';
 
 const useStyles = makeStyles(theme => ({
@@ -23,7 +25,6 @@ const days = ['Sun', 'Mon', 'Tus', 'Wen', 'Thu'];
 
 const Home  = inject('weatherInfo')(observer(({weatherInfo}) => {
   const classes = useStyles();
-  console.log('11111', weatherInfo.isFavorite);
 
   const changeCity = (e) => {
     weatherInfo.handleChange(e.target.value);
@@ -38,6 +39,10 @@ const Home  = inject('weatherInfo')(observer(({weatherInfo}) => {
     e.preventDefault();
     weatherInfo.handleToggleItems();
     weatherInfo.checkFavorite();
+  }
+
+  const changeUnits = (e) => {
+    weatherInfo.convertUnits(e.target.checked)
   }
 
   return (
@@ -88,9 +93,7 @@ const Home  = inject('weatherInfo')(observer(({weatherInfo}) => {
                 <Typography
                   variant="h5"
                 >
-                  { weatherInfo.currentCityWeather.Temperature.Metric.Value }
-                  &nbsp;
-                  { weatherInfo.currentCityWeather.Temperature.Metric.Unit }
+                  { weatherInfo.convertCelsToFahr(weatherInfo.currentCityWeather.Temperature.Metric.Value) }
                 </Typography>
               </div>
             </div>
@@ -128,15 +131,13 @@ const Home  = inject('weatherInfo')(observer(({weatherInfo}) => {
                     component="p"
                   >
                     min: &nbsp;
-                    { item.Temperature.Minimum.Value }
-                    { item.Temperature.Minimum.Unit }
+                    { weatherInfo.convertCelsToFahr(item.Temperature.Minimum.Value) }
                   </Typography>
                   <Typography
                     component="p"
                   >
                     max: &nbsp;
-                    { item.Temperature.Maximum.Value }
-                    { item.Temperature.Maximum.Unit }
+                    { weatherInfo.convertCelsToFahr(item.Temperature.Maximum.Value) }
                   </Typography>
                   <Typography
                     variant="caption"
@@ -152,6 +153,19 @@ const Home  = inject('weatherInfo')(observer(({weatherInfo}) => {
           <div className="preloader-ico-wrap">
             <CircularProgress className="preloader-ico" />
           </div>
+        </div>
+        <div>
+          <FormControlLabel
+            label="convert to fahrenheit"
+            control={
+              <Switch
+                onChange={ changeUnits }
+                checked={ weatherInfo.currentUnit }
+                value={ weatherInfo.currentUnit }
+                color="secondary"
+              />
+            }
+          />
         </div>
       </Paper>
     </div>

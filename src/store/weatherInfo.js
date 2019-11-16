@@ -4,6 +4,7 @@ class WeatherInfo {
   constructor() {
     this.defaultCity = 'Tel Aviv';
     this.isFavorite = false;
+    this.currentUnit = false;
     this.apikey = 'apikey=pDu5xempVF8sw40jqPMObfxVIF7Gofk4';
     this.urlAutocomplete = 'https://dataservice.accuweather.com/locations/v1/cities/autocomplete';
     this.urlCityInfo = 'https://dataservice.accuweather.com/currentconditions/v1/';
@@ -214,8 +215,22 @@ class WeatherInfo {
 
   checkFavorite() {
     this.isFavorite = this.favorites.some(el => (
-      el.LocalizedName === this.defaultCity
+      el.LocalizedName === this.currentCityInfo.LocalizedName
     ));
+  }
+
+  convertCelsToFahr(celsius) {
+    const cToFahr = celsius * 9 / 5 + 32;
+
+    if (this.currentUnit === false) {
+      return (celsius + '\xB0C')
+    } else {
+      return (cToFahr.toFixed(2) + '\xB0F')
+    }
+  }
+
+  convertUnits(stateCheck) {
+    this.currentUnit = stateCheck;
   }
 
   handleToggleItems() {
@@ -294,10 +309,13 @@ decorate(WeatherInfo, {
   weather5day: observable,
   favorites: observable,
   isFavorite: observable,
+  currentUnit: observable,
   handleChange: action,
   handleSubmit: action,
   handleToggleItems: action,
-  checkFavorite: action
+  checkFavorite: action,
+  convertCelsToFahr: action,
+  convertUnits: action
 })
 
 const weatherInfo = new WeatherInfo();

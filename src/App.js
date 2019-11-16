@@ -9,7 +9,7 @@ import weatherInfo from './store/weatherInfo';
 const stores = { themeUI, weatherInfo };
 
 const App = () => (
-  <Router>
+  <Router basename={process.env.PUBLIC_URL}>
     <Provider { ...stores }>
       <AppMain />
     </Provider>
