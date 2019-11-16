@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "62852633795c5eba5dcf6fd13a9c1ac5",
+    "revision": "8c9f40af19064972e1e11af0f050aa4c",
     "url": "/anton-trofimov-12-11-2019/index.html"
   },
   {
-    "revision": "7ea8ce755d75d7656d4a",
+    "revision": "a7f11d84f2de6f8c00e7",
     "url": "/anton-trofimov-12-11-2019/static/css/main.074262d5.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/anton-trofimov-12-11-2019/static/js/2.dcb71988.chunk.js"
   },
   {
-    "revision": "7ea8ce755d75d7656d4a",
-    "url": "/anton-trofimov-12-11-2019/static/js/main.54f6182b.chunk.js"
+    "revision": "a7f11d84f2de6f8c00e7",
+    "url": "/anton-trofimov-12-11-2019/static/js/main.831f616a.chunk.js"
   },
   {
     "revision": "732a8d007f6c113ba0e1",

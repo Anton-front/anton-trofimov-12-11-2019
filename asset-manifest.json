@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/anton-trofimov-12-11-2019/static/css/main.074262d5.chunk.css",
-    "main.js": "/anton-trofimov-12-11-2019/static/js/main.54f6182b.chunk.js",
-    "main.js.map": "/anton-trofimov-12-11-2019/static/js/main.54f6182b.chunk.js.map",
+    "main.js": "/anton-trofimov-12-11-2019/static/js/main.831f616a.chunk.js",
+    "main.js.map": "/anton-trofimov-12-11-2019/static/js/main.831f616a.chunk.js.map",
     "runtime-main.js": "/anton-trofimov-12-11-2019/static/js/runtime-main.f6b9ce5f.js",
     "runtime-main.js.map": "/anton-trofimov-12-11-2019/static/js/runtime-main.f6b9ce5f.js.map",
     "static/js/2.dcb71988.chunk.js": "/anton-trofimov-12-11-2019/static/js/2.dcb71988.chunk.js",
     "static/js/2.dcb71988.chunk.js.map": "/anton-trofimov-12-11-2019/static/js/2.dcb71988.chunk.js.map",
     "index.html": "/anton-trofimov-12-11-2019/index.html",
-    "precache-manifest.ec5aa7103f32a0ba5aa1b2ce9e1bfc55.js": "/anton-trofimov-12-11-2019/precache-manifest.ec5aa7103f32a0ba5aa1b2ce9e1bfc55.js",
+    "precache-manifest.edd8a344394edb1516723965ff65f989.js": "/anton-trofimov-12-11-2019/precache-manifest.edd8a344394edb1516723965ff65f989.js",
     "service-worker.js": "/anton-trofimov-12-11-2019/service-worker.js",
     "static/css/main.074262d5.chunk.css.map": "/anton-trofimov-12-11-2019/static/css/main.074262d5.chunk.css.map",
     "static/media/weather-ico.png": "/anton-trofimov-12-11-2019/static/media/weather-ico.3d7b78de.png"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.f6b9ce5f.js",
     "static/js/2.dcb71988.chunk.js",
     "static/css/main.074262d5.chunk.css",
-    "static/js/main.54f6182b.chunk.js"
+    "static/js/main.831f616a.chunk.js"
   ]
 }
