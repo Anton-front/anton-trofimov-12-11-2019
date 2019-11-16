@@ -23,6 +23,7 @@ const days = ['Sun', 'Mon', 'Tus', 'Wen', 'Thu'];
 
 const Home  = inject('weatherInfo')(observer(({weatherInfo}) => {
   const classes = useStyles();
+  console.log('11111', weatherInfo.isFavorite);
 
   const changeCity = (e) => {
     weatherInfo.handleChange(e.target.value);
@@ -36,6 +37,7 @@ const Home  = inject('weatherInfo')(observer(({weatherInfo}) => {
   const toggleFavorites = (e) => {
     e.preventDefault();
     weatherInfo.handleToggleItems();
+    weatherInfo.checkFavorite();
   }
 
   return (
@@ -79,7 +81,7 @@ const Home  = inject('weatherInfo')(observer(({weatherInfo}) => {
                 <Typography
                   variant="h5"
                 >
-                  { weatherInfo.currentCityInfo.LocalizedName }, 
+                  { weatherInfo.currentCityInfo.LocalizedName },
                   &nbsp;
                   { weatherInfo.currentCityInfo.Country.LocalizedName }
                 </Typography>
@@ -96,6 +98,7 @@ const Home  = inject('weatherInfo')(observer(({weatherInfo}) => {
               <Fab
                 aria-label="like"
                 color="primary"
+                className={ (weatherInfo.isFavorite) ? 'favorite-on' : 'favorite-off' }
                 onClick={ toggleFavorites }
               >
                 <FavoriteIcon />

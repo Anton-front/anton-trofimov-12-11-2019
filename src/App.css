@@ -40,7 +40,7 @@
 }
 
 .text-center {
-	text-align: center;	
+	text-align: center;
 }
 
 .weather-details-wrap {
@@ -77,9 +77,9 @@
 
 .day-weather-item {
 	display: block;
-	text-align: center;	
+	text-align: center;
 	width: 20%;
-	padding: 0 10px;	
+	padding: 0 10px;
 	margin-bottom: 20px;
 	border-left: 1px solid #e6e6e6;
 }
@@ -108,7 +108,7 @@
 	justify-content: center;
 }
 
-.active-favorite {
+.favorite-on {
 	background-color: red !important;
 }
 

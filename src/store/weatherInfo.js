@@ -5,9 +5,9 @@ class WeatherInfo {
     this.defaultCity = 'Tel Aviv';
     this.isFavorite = false;
     this.apikey = 'apikey=pDu5xempVF8sw40jqPMObfxVIF7Gofk4';
-    this.urlAutocomplete = 'http://dataservice.accuweather.com/locations/v1/cities/autocomplete';
-    this.urlCityInfo = 'http://dataservice.accuweather.com/currentconditions/v1/';
-    this.urlWeather5day = 'http://dataservice.accuweather.com/forecasts/v1/daily/5day/';
+    this.urlAutocomplete = 'https://dataservice.accuweather.com/locations/v1/cities/autocomplete';
+    this.urlCityInfo = 'https://dataservice.accuweather.com/currentconditions/v1/';
+    this.urlWeather5day = 'https://dataservice.accuweather.com/forecasts/v1/daily/5day/';
     this.isLoading = false;
     this.favorites = [
     ];
@@ -214,7 +214,7 @@ class WeatherInfo {
 
   checkFavorite() {
     this.isFavorite = this.favorites.some(el => (
-      el.LocalizedName === this.currentCityInfo.LocalizedName
+      el.LocalizedName === this.defaultCity
     ));
   }
 
@@ -265,7 +265,7 @@ class WeatherInfo {
       .then(newRes => (
         fetch(this.urlCityInfo + this.currentCityInfo.Key + '?' + this.apikey)
           .then(response => response.json())
-          .then(resData => { 
+          .then(resData => {
             if (resData.length > 0) {
               this.currentCityWeather = resData[0]
             }
@@ -273,9 +273,10 @@ class WeatherInfo {
           .then(newRes => (
             fetch(this.urlWeather5day + this.currentCityInfo.Key + '?' + this.apikey + '&metric=true')
               .then(response => response.json())
-              .then(resData => { 
+              .then(resData => {
                 this.weather5day = resData.DailyForecasts;
                 this.isLoading = false;
+                this.checkFavorite();
               })
             ))
         ))
@@ -292,6 +293,7 @@ decorate(WeatherInfo, {
   currentCityWeather: observable,
   weather5day: observable,
   favorites: observable,
+  isFavorite: observable,
   handleChange: action,
   handleSubmit: action,
   handleToggleItems: action,
